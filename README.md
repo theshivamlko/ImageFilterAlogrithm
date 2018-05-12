@@ -8,3 +8,7 @@ and some my own customized filters - No Library used, you can save these filtere
 You can add your own Customized Filter in project also and who knows might get Trending on Social Networks.
 plz do give feedback on video, how can I improve
 
+All sample filters in project
+
+![alt text](https://github.com/theshivamlko/ImageFilterAlogrithm/blob/master/sample.png)
+
