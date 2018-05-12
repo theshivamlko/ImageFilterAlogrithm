@@ -353,15 +353,15 @@ public class ImageFilters {
         Log.e("Image Size", "Height=" + imageHeight + " Width=" + imageWidth);
 
 
+        // traversing each pixel in Image as an 2D Array
         for (int i = 0; i < imageWidth; i++) {
-
             for (int j = 0; j < imageHeight; j++) {
 
-                // operating on each pixel
+                // getting each pixel
                 int oldPixel = oldBitmap.getPixel(i, j);
 
-                // each pixel is made from RED_BLUE_GREEN
-                // getting old values of them
+                // each pixel is made from RED_BLUE_GREEN_ALPHA
+                // so, getting current values of pixel
                 int oldRed = Color.red(oldPixel);
                 int oldBlue = Color.blue(oldPixel);
                 int oldGreen = Color.green(oldPixel);
@@ -480,7 +480,7 @@ public class ImageFilters {
 
         Log.e("Image Size", "Height=" + imageHeight + " Width=" + imageWidth);
 
-
+        // traversing each pixel in Image as an 2D Array
         for (int i = 0; i < imageWidth; i++) {
             for (int j = 0; j < imageHeight; j++) {
 
@@ -488,7 +488,7 @@ public class ImageFilters {
                 int oldPixel = oldBitmap.getPixel(i, j);
 
                 // each pixel is made from RED_BLUE_GREEN
-                // getting old values of them
+                // so, getting current values of pixel
                 int oldRed = Color.red(oldPixel);
                 int oldBlue = Color.blue(oldPixel);
                 int oldGreen = Color.green(oldPixel);
@@ -496,6 +496,7 @@ public class ImageFilters {
 
 
                 // Algorithm for getting new values after calculation of filter
+                // Algorithm for SKETCH FILTER
                 int intensity = (oldRed + oldBlue + oldGreen) / 3;
 
                 // applying new pixel value to newBitmap
@@ -507,7 +508,7 @@ public class ImageFilters {
                     // apply white color
                     newPixel = Color.argb(oldAlpha, HIGHEST_COLOR_VALUE, HIGHEST_COLOR_VALUE, HIGHEST_COLOR_VALUE);
 
-                }else if(intensity > 100){
+                } else if (intensity > 100) {
                     // apply grey color
                     newPixel = Color.argb(oldAlpha, 150, 150, 150);
                 } else {
